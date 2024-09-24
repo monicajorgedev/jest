@@ -1,0 +1,23 @@
+{
+  "name": "jest",
+  "version": "1.0.0",
+  "description": "## Explicación",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monicajorgedev/jest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monicajorgedev/jest/issues"
+  },
+  "homepage": "https://github.com/monicajorgedev/jest#readme",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}

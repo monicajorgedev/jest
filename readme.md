@@ -10,7 +10,7 @@ El objetivo es aprender a escribir test unitarios para funciones simples, por lo
 
 La aplicación de administración de productos tendrá las siguientes funciones y variables:
 
-- resetProducts(): reinicia la lista de productos y el id.
+- resetProducts(): reinicia la lista de productos y el id. OK
 - addProduct(name, price): agrega un producto a la lista de productos.
 - removeProduct(id): elimina un producto de la lista de productos.
 - getProducts(): devuelve todos los productos.
@@ -24,12 +24,12 @@ Para poder testear las distintas funciones, tendremos que asumir que las funcion
 
 Los tests deberían cubrir los siguientes casos:
 
-- addProduct
+- addProduct OK
   - debería agregar un producto.
   - debería incrementar el id en 1 cada vez que se añada un producto.
   - debería lanzar un error si el nombre o el precio no están definidos.
   - debería lanzar un error si el producto ya existe.
-- removeProduct
+- removeProduct OK
   - debería eliminar un producto
   - debería lanzar un error si el producto no existe.
 - getProduct
@@ -65,7 +65,14 @@ Crea un archivo `product.test.js`, aquí vamos a escribir los test unitarios par
 Inicia importando las funciones en el archivo de prueba `product.test.js`:
 
 ```javascript
-const { resetProducts,  addProduct, removeProduct, getProducts, getProduct, updateProduct} = require('./product');
+const {
+  resetProducts,
+  addProduct,
+  removeProduct,
+  getProducts,
+  getProduct,
+  updateProduct,
+} = require("./product");
 ```
 
 Vamos a ver cómo construir las pruebas individuales para cada una de las funciones.
@@ -74,7 +81,7 @@ Antes de cada test, reiniciaremos los productos para garantizar la independencia
 
 ```javascript
 beforeEach(() => {
-    resetProducts();
+  resetProducts();
 });
 ```
 
@@ -82,7 +89,7 @@ beforeEach(() => {
 
 ```javascript
 afterEach(() => {
-    resetProducts();
+  resetProducts();
 });
 ```
 
@@ -126,7 +133,7 @@ Cada vez que quieras ejecutar los test, ejecuta el comando `npm test` en la term
   Updating Products
     ✓ should update a product
     ✓ should fail when updating a product that does not exist (1 ms)
-    ✓ should only update the price
+    ✓ should fail when updating a product that does not exist
     ✓ should only update the name
 
 Test Suites: 1 passed, 1 total
@@ -139,11 +146,14 @@ Ran all test suites.
 Si alguno de los tests falla, verás un mensaje de error en la terminal en el que se indicará qué test ha fallado y por qué.
 
 ## PISTAS
+
 Para crear cada producto puedes hacer lo siguiente:
-```Javascript 
+
+```Javascript
 let products = []; // declaramos una variable products vacía
 let id = 0; // declaramos una variable id con valor 0
 ```
+
 Piensa bien lo que hace cada función que vamos a crear como añadir, borrar, actualizar... y saber como preaprar esos tests y esas funciones.
 
 Decide la mejor manera de hacerlo. Sientete libre y toma tus propias decisiones para crearlo todo en base a lo que pide el ejercicio.
