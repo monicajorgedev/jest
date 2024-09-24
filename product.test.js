@@ -34,14 +34,14 @@ describe('Adding Products', ()=> {
 
 describe('Removing Products', ()=> {
     it('should remove a product',() => {
-        const product = addProduct('mac',1500)
+        addProduct('mac',1500)
         expect(getProduct(1)).not.toBe(null)
         removeProduct(1)
 
         expect(() => getProduct(1)).toThrow('product does not exist')
     })
     it('shoul fail when delete product if product does not exist', () => {
-        const products = getProducts()
+        getProducts()
         expect(()=> removeProduct(5)).toThrow('product does not exist')
     })
 })
@@ -64,8 +64,6 @@ describe('Updating Products', ()=> {
         addProduct('iphone',600)
         updateProduct(1,'mac', 1000)
         const product = getProduct(1)
-
-
         expect(product).toStrictEqual({"id": 1, "name": "mac", "price": 1000})
     })
     it('should fail when updating a product that does not exist ', () => {
@@ -73,7 +71,7 @@ describe('Updating Products', ()=> {
         expect(()=> updateProduct(9999,'mac', 1000)).toThrow('product does not exist')
     })
     it('should only update the name', ()=>{
-        const newproduct = addProduct('ipad', 200)
+        addProduct('ipad', 200)
         updateProduct(1,'ipod')
         const productModified = getProduct(1)
         expect(productModified.name).toBe('ipod')
