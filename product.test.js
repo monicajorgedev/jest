@@ -4,7 +4,6 @@ beforeEach(() => {
     resetProducts();
 });
 
-
 describe('Adding Products', ()=> {
     it('should add a product',() => {
         const product = addProduct('iphone',600)
@@ -29,7 +28,6 @@ describe('Adding Products', ()=> {
         expect(() => addProduct('mouse',null)).toThrow('price is required');
       })
 })
-
 
 
 describe('Removing Products', ()=> {

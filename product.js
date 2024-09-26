@@ -28,7 +28,6 @@ const addProduct = (name, price) => {
     return newProduct
 }
 
-addProduct('iphone',600)
 
 const removeProduct = (id) => {
     const existProduct = products.some(product => product.id === id)
